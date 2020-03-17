@@ -71,6 +71,11 @@ class FormHelperTest extends TestCase
     protected $url;
 
     /**
+     * @var string
+     */
+    protected $previousNamespace;
+
+    /**
      * setUp method
      *
      * @return void
@@ -81,7 +86,7 @@ class FormHelperTest extends TestCase
 
         Configure::write('Config.language', 'eng');
         Configure::write('App.base', '');
-        static::setAppNamespace('Cake\Test\TestCase\View\Helper');
+        $this->previousNamespace = static::setAppNamespace('Cake\Test\TestCase\View\Helper');
 
         $request = new ServerRequest([
             'webroot' => '',
@@ -138,6 +143,7 @@ class FormHelperTest extends TestCase
     {
         parent::tearDown();
         unset($this->Form, $this->Controller, $this->View);
+        static::setAppNamespace($this->previousNamespace);
     }
 
     /**

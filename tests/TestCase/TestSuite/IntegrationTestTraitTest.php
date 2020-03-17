@@ -55,7 +55,6 @@ class IntegrationTestTraitTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        static::setAppNamespace();
 
         Router::reload();
         Router::extensions(['json']);

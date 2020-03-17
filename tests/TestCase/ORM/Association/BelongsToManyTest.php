@@ -299,8 +299,6 @@ class BelongsToManyTest extends TestCase
      */
     public function testFinderOption()
     {
-        $this->setAppNamespace('TestApp');
-
         $articles = $this->getTableLocator()->get('Articles');
         $tags = $this->getTableLocator()->get('Tags');
 
@@ -851,8 +849,6 @@ class BelongsToManyTest extends TestCase
      */
     public function testReplaceLinkWithFinderInJunctionAssociations()
     {
-        $this->setAppNamespace('TestApp');
-
         $joint = $this->getTableLocator()->get('ArticlesTags');
         $articles = $this->getTableLocator()->get('Articles');
         $tags = $this->getTableLocator()->get('Tags');

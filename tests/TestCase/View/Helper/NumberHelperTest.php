@@ -18,7 +18,6 @@ declare(strict_types=1);
  */
 namespace Cake\Test\TestCase\View\Helper;
 
-use Cake\Core\Configure;
 use Cake\I18n\Number;
 use Cake\TestSuite\TestCase;
 use Cake\View\Helper\NumberHelper;
@@ -48,9 +47,6 @@ class NumberHelperTest extends TestCase
     {
         parent::setUp();
         $this->View = new View();
-
-        $this->_appNamespace = Configure::read('App.namespace');
-        static::setAppNamespace();
     }
 
     /**
@@ -62,7 +58,6 @@ class NumberHelperTest extends TestCase
     {
         parent::tearDown();
         $this->clearPlugins();
-        static::setAppNamespace($this->_appNamespace);
         unset($this->View);
     }
 

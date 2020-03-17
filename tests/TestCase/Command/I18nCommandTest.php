@@ -37,7 +37,6 @@ class I18nCommandTest extends TestCase
 
         $this->localeDir = TMP . 'Locale' . DS;
         $this->useCommandRunner();
-        $this->setAppNamespace();
     }
 
     /**

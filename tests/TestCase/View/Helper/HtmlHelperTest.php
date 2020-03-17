@@ -80,7 +80,6 @@ class HtmlHelperTest extends TestCase
         $this->Html = new HtmlHelper($this->View);
 
         $this->loadPlugins(['TestTheme']);
-        static::setAppNamespace();
         Configure::write('Asset.timestamp', false);
 
         Router::scope('/', function (RouteBuilder $routes) {

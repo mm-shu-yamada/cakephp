@@ -16,7 +16,6 @@ declare(strict_types=1);
  */
 namespace Cake\Test\TestCase\View\Helper;
 
-use Cake\Core\Configure;
 use Cake\TestSuite\TestCase;
 use Cake\View\Helper\TextHelper;
 use Cake\View\View;
@@ -50,9 +49,6 @@ class TextHelperTest extends TestCase
         parent::setUp();
         $this->View = new View();
         $this->Text = new TextHelper($this->View);
-
-        $this->_appNamespace = Configure::read('App.namespace');
-        static::setAppNamespace();
     }
 
     /**
@@ -63,7 +59,6 @@ class TextHelperTest extends TestCase
     public function tearDown(): void
     {
         unset($this->Text, $this->View);
-        static::setAppNamespace($this->_appNamespace);
         parent::tearDown();
     }
 

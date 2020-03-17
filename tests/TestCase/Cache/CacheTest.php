@@ -298,7 +298,6 @@ class CacheTest extends TestCase
      */
     public function testConfigWithLibAndPluginEngines()
     {
-        static::setAppNamespace();
         $this->loadPlugins(['TestPlugin']);
 
         $config = ['engine' => 'TestAppCache', 'path' => CACHE, 'prefix' => 'cake_test_'];
@@ -625,8 +624,6 @@ class CacheTest extends TestCase
      */
     public function testDrop()
     {
-        static::setAppNamespace();
-
         $result = Cache::drop('some_config_that_does_not_exist');
         $this->assertFalse($result, 'Drop should not succeed when config is missing.');
 
@@ -740,7 +737,6 @@ class CacheTest extends TestCase
      */
     public function testWriteTriggerError()
     {
-        static::setAppNamespace();
         Cache::setConfig('test_trigger', [
             'engine' => 'TestAppCache',
             'prefix' => '',

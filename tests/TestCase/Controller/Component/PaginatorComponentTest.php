@@ -80,8 +80,6 @@ class PaginatorComponentTest extends TestCase
     {
         parent::setUp();
 
-        static::setAppNamespace();
-
         $request = new ServerRequest(['url' => 'controller_posts/index']);
         $this->controller = new Controller($request);
         $this->registry = new ComponentRegistry($this->controller);

@@ -55,7 +55,6 @@ class UrlHelperTest extends TestCase
         $this->View = new View($request);
         $this->Helper = new UrlHelper($this->View);
 
-        static::setAppNamespace();
         $this->loadPlugins(['TestTheme']);
         Router::scope('/', function (RouteBuilder $routes) {
             $routes->fallbacks();

@@ -15,7 +15,6 @@ declare(strict_types=1);
  */
 namespace Cake\Test\TestCase\Mailer;
 
-use Cake\Core\Configure;
 use Cake\Mailer\Exception\MissingMailerException;
 use Cake\TestSuite\TestCase;
 use TestApp\Mailer\Stub;
@@ -33,17 +32,12 @@ class MailerAwareTraitTest extends TestCase
      */
     public function testGetMailer()
     {
-        $originalAppNamespace = Configure::read('App.namespace');
-        static::setAppNamespace();
-
         $stub = new Stub();
         $this->assertInstanceOf(TestMailer::class, $stub->getMailer('Test'));
 
         $stub = new Stub();
         $mailer = $stub->getMailer('Test', ['from' => 'admad@cakephp.org']);
         $this->assertSame(['admad@cakephp.org' => 'admad@cakephp.org'], $mailer->getFrom());
-
-        static::setAppNamespace($originalAppNamespace);
     }
 
     /**

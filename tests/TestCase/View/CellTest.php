@@ -47,7 +47,6 @@ class CellTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        static::setAppNamespace();
         $this->loadPlugins(['TestPlugin', 'TestTheme']);
         $request = new ServerRequest();
         $response = new Response();

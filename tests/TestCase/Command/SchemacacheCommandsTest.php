@@ -46,7 +46,6 @@ class SchemacacheCommandsTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->setAppNamespace();
         $this->useCommandRunner();
 
         $this->cache = $this->getMockBuilder(NullEngine::class)

@@ -459,7 +459,6 @@ class BelongsToTest extends TestCase
      */
     public function testAttachToFormatResultsNoDirtyResults()
     {
-        $this->setAppNamespace('TestApp');
         $articles = $this->getTableLocator()->get('Articles');
         $articles->belongsTo('Authors')
             ->setFinder('formatted');

@@ -40,7 +40,6 @@ class ControllerFactoryTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        static::setAppNamespace();
         $this->factory = new ControllerFactory();
     }
 

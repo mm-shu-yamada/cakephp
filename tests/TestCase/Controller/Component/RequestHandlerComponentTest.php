@@ -69,7 +69,6 @@ class RequestHandlerComponentTest extends TestCase
     {
         parent::setUp();
         $this->server = $_SERVER;
-        static::setAppNamespace();
         $this->_init();
     }
 

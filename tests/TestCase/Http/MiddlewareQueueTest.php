@@ -16,7 +16,6 @@ declare(strict_types=1);
  */
 namespace Cake\Test\TestCase\Http;
 
-use Cake\Core\Configure;
 use Cake\Http\MiddlewareQueue;
 use Cake\TestSuite\TestCase;
 use TestApp\Middleware\DumbMiddleware;
@@ -35,9 +34,6 @@ class MiddlewareQueueTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-
-        $this->appNamespace = Configure::read('App.namespace');
-        static::setAppNamespace();
     }
 
     /**
@@ -48,7 +44,6 @@ class MiddlewareQueueTest extends TestCase
     public function tearDown(): void
     {
         parent::tearDown();
-        static::setAppNamespace($this->appNamespace);
     }
 
     public function testConstructorAddingMiddleware()

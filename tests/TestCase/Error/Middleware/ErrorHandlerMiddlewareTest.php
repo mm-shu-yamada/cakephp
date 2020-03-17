@@ -48,8 +48,6 @@ class ErrorHandlerMiddlewareTest extends TestCase
     {
         parent::setUp();
 
-        static::setAppNamespace();
-
         Log::reset();
         Log::setConfig('error_test', [
             'className' => 'Array',

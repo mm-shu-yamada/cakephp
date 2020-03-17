@@ -34,7 +34,6 @@ class HelperRegistryTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        static::setAppNamespace();
         $io = $this->getMockBuilder('Cake\Console\ConsoleIo')
             ->disableOriginalConstructor()
             ->getMock();

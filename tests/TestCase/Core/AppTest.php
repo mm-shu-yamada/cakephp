@@ -50,7 +50,6 @@ class AppTest extends TestCase
      */
     public function testClassName($class, $type, $suffix = '', $existsInBase = false, $expected = false)
     {
-        static::setAppNamespace();
         $i = 0;
         TestApp::$existsInBaseCallback = function ($name, $namespace) use ($existsInBase, $class, $expected, &$i) {
             if ($i++ === 0) {
@@ -85,8 +84,6 @@ class AppTest extends TestCase
      */
     public function testShortName($class, $type, $suffix = '', $expected = false)
     {
-        static::setAppNamespace();
-
         $return = TestApp::shortName($class, $type, $suffix);
         $this->assertSame($expected, $return);
     }
@@ -98,7 +95,7 @@ class AppTest extends TestCase
      */
     public function testShortNameWithNestedAppNamespace()
     {
-        static::setAppNamespace('TestApp/Nested');
+        $previousNamespace = static::setAppNamespace('TestApp/Nested');
 
         $return = TestApp::shortName(
             'TestApp/Nested/Controller/PagesController',
@@ -107,7 +104,7 @@ class AppTest extends TestCase
         );
         $this->assertSame('Pages', $return);
 
-        static::setAppNamespace();
+        static::setAppNamespace($previousNamespace);
     }
 
     /**

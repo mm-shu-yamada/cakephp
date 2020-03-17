@@ -55,7 +55,6 @@ class ConsoleIoTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        static::setAppNamespace();
 
         $this->out = $this->getMockBuilder('Cake\Console\ConsoleOutput')
             ->disableOriginalConstructor()

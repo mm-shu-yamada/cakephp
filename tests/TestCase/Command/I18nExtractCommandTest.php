@@ -38,7 +38,6 @@ class I18nExtractCommandTest extends TestCase
     {
         parent::setUp();
         $this->useCommandRunner();
-        $this->setAppNamespace();
 
         $this->path = TMP . 'tests/extract_task_test';
         $fs = new Filesystem();
@@ -247,7 +246,6 @@ class I18nExtractCommandTest extends TestCase
      */
     public function testExtractExcludePlugins()
     {
-        static::setAppNamespace();
         $this->exec(
             'i18n extract ' .
             '--extract-core=no ' .

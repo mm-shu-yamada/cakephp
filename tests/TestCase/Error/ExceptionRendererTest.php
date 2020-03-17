@@ -254,7 +254,6 @@ class ExceptionRendererTest extends TestCase
      */
     public function testCakeErrorHelpersNotLost()
     {
-        static::setAppNamespace();
         $exception = new NotFoundException();
         $renderer = new \TestApp\Error\TestAppsExceptionRenderer($exception);
 

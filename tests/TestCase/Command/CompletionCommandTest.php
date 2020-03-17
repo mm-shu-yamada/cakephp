@@ -37,7 +37,6 @@ class CompletionCommandTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        static::setAppNamespace();
         Configure::write('Plugins.autoload', ['TestPlugin', 'TestPluginTwo']);
 
         $this->useCommandRunner();

@@ -240,10 +240,13 @@ class ViewBuilderTest extends TestCase
      */
     public function testBuildAppViewMissing()
     {
-        static::setAppNamespace('Nope');
+        $previousNamespace = static::setAppNamespace('Nope');
+
         $builder = new ViewBuilder();
         $view = $builder->build();
         $this->assertInstanceOf('Cake\View\View', $view);
+
+        static::setAppNamespace($previousNamespace);
     }
 
     /**
@@ -253,7 +256,6 @@ class ViewBuilderTest extends TestCase
      */
     public function testBuildAppViewPresent()
     {
-        static::setAppNamespace();
         $builder = new ViewBuilder();
         $view = $builder->build();
         $this->assertInstanceOf('TestApp\View\AppView', $view);

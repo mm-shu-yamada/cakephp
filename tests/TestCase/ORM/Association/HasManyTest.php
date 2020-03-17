@@ -58,7 +58,6 @@ class HasManyTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->setAppNamespace('TestApp');
 
         $this->author = $this->getTableLocator()->get('Authors', [
             'schema' => [
@@ -1216,7 +1215,6 @@ class HasManyTest extends TestCase
     public function testSaveReplaceSaveStrategyDependentWithConditions()
     {
         $this->getTableLocator()->clear();
-        $this->setAppNamespace('TestApp');
 
         $authors = $this->getTableLocator()->get('Authors');
         $authors->hasMany('Articles', [

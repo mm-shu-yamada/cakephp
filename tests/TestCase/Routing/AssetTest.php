@@ -43,7 +43,6 @@ class AssetTest extends TestCase
         ]);
         Router::setRequest($request);
 
-        static::setAppNamespace();
         $this->loadPlugins(['TestTheme']);
         Router::scope('/', function (RouteBuilder $routes) {
             $routes->fallbacks();

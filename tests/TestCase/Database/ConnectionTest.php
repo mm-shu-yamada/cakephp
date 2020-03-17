@@ -79,8 +79,6 @@ class ConnectionTest extends TestCase
 
         $this->logState = $this->connection->isQueryLoggingEnabled();
         $this->connection->disableQueryLogging();
-
-        static::setAppNamespace();
     }
 
     /**

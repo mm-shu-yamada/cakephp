@@ -40,7 +40,6 @@ class BaseApplicationTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        static::setAppNamespace();
         $this->path = dirname(dirname(__DIR__));
     }
 

@@ -342,7 +342,6 @@ class TestCaseTest extends TestCase
      */
     public function testGetMockForModel()
     {
-        static::setAppNamespace();
         // No methods will be mocked if $methods argument of getMockForModel() is empty.
         $Posts = $this->getMockForModel('Posts');
         $entity = new Entity([]);
@@ -383,7 +382,6 @@ class TestCaseTest extends TestCase
      */
     public function testGetMockForModelWithPlugin()
     {
-        static::setAppNamespace();
         $this->loadPlugins(['TestPlugin']);
         $TestPluginComment = $this->getMockForModel('TestPlugin.TestPluginComments');
 
@@ -457,9 +455,7 @@ class TestCaseTest extends TestCase
      */
     public function testGetMockForModelSetTable()
     {
-        static::setAppNamespace();
-
-        $I18n = $this->getMockForModel('I18n', ['save']);
+        $I18n = $this->getMockForModel('CustomI18n', ['save']);
         $this->assertSame('custom_i18n_table', $I18n->getTable());
 
         $Tags = $this->getMockForModel('Tags', ['save']);

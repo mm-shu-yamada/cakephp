@@ -37,7 +37,6 @@ class CacheCommandsTest extends TestCase
     {
         parent::setUp();
         Cache::setConfig('test', ['engine' => 'File', 'path' => CACHE]);
-        $this->setAppNamespace();
         $this->useCommandRunner();
     }
 

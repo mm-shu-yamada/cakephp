@@ -34,7 +34,6 @@ class MiddlewareApplicationTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        static::setAppNamespace();
     }
 
     /**

@@ -435,7 +435,6 @@ class SessionTest extends TestCase
      */
     public function testUsingAppLibsHandler()
     {
-        static::setAppNamespace();
         $config = [
             'defaults' => 'cake',
             'handler' => [
@@ -460,7 +459,6 @@ class SessionTest extends TestCase
      */
     public function testUsingPluginHandler()
     {
-        static::setAppNamespace();
         $this->loadPlugins(['TestPlugin']);
 
         $config = [
@@ -484,7 +482,6 @@ class SessionTest extends TestCase
      */
     public function testEngineWithPreMadeInstance()
     {
-        static::setAppNamespace();
         $engine = new TestAppLibSession();
         $session = new Session(['handler' => ['engine' => $engine]]);
         $this->assertSame($engine, $session->engine());

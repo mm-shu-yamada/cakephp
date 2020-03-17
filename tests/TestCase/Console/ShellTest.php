@@ -107,8 +107,6 @@ class ShellTest extends TestCase
      */
     public function testInitialize()
     {
-        static::setAppNamespace();
-
         $this->loadPlugins(['TestPlugin']);
         $this->Shell->tasks = ['Sample' => ['one', 'two']];
         $this->Shell->plugin = 'TestPlugin';
@@ -131,8 +129,6 @@ class ShellTest extends TestCase
      */
     public function testLoadModel()
     {
-        static::setAppNamespace();
-
         $Shell = new MergeShell();
         $this->assertInstanceOf(
             'TestApp\Model\Table\ArticlesTable',
@@ -670,7 +666,6 @@ class ShellTest extends TestCase
      */
     public function testHasTask()
     {
-        $this->setAppNamespace();
         $this->Shell->tasks = ['Sample', 'TestApple'];
         $this->Shell->loadTasks();
 

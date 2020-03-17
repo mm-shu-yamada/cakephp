@@ -101,8 +101,6 @@ class AssociationProxyTest extends TestCase
      */
     public function testUpdateAllFromAssociationFinder()
     {
-        $this->setAppNamespace('TestApp');
-
         $articles = $this->getTableLocator()->get('articles');
         $authors = $this->getTableLocator()->get('authors');
         // Exclude a record from the published finder.
@@ -141,8 +139,6 @@ class AssociationProxyTest extends TestCase
      */
     public function testDeleteAllFromAssociationFinder()
     {
-        $this->setAppNamespace('TestApp');
-
         $articles = $this->getTableLocator()->get('articles');
         $authors = $this->getTableLocator()->get('authors');
         // Exclude a record from the published finder.

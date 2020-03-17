@@ -88,7 +88,6 @@ class TableTest extends TestCase
     {
         parent::setUp();
         $this->connection = ConnectionManager::get('test');
-        static::setAppNamespace();
 
         $this->usersTypeMap = new TypeMap([
             'Users.id' => 'integer',
